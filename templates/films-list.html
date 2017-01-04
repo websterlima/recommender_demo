@@ -1,0 +1,9 @@
+<ul class="films-list">
+   {{~ it.films:film}}
+       <li>
+           <a href="{{=film.url}}">
+               <img src="{{=film.poster}}" alt="">
+           </a>
+       </li>
+   {{~}}
+</ul>
