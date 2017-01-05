@@ -1,0 +1,15 @@
+application: recomendador-154618
+version: hml
+runtime: python27
+api_version: 1
+service: demo
+threadsafe: true
+
+handlers:
+
+- url: /statics
+  static_dir: statics
+
+- url: /
+  static_files: statics/index.html
+  upload: statics/index.html

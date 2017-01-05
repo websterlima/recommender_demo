@@ -1,0 +1,11 @@
+<ul class="recommendations-list">
+   {{~ it.films:film}}
+       <li>
+            <div class="recommendation">
+               <a href="#">
+                   <img src="{{=film.poster}}" alt="">
+               </a>
+           </div>
+       </li>
+   {{~}}
+</ul>
