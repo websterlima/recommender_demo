@@ -1,0 +1,107 @@
+header {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.05);
+    z-index: 5;
+}
+
+header .logo {
+    position: absolute;
+    vertical-align: middle;
+    height: 40px;
+    top: 50%;
+    left: 40px;
+    margin-top: -20px;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+header .container-user {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    top: 50%;
+    right: 90px;
+    margin-top: -35px;
+    cursor: pointer;
+}
+
+header .container-user .name {
+    position: relative;
+    font-size: 14px;
+}
+
+header .container-user .name span {
+    position: absolute;
+    top: 3px;
+    right: -20px;
+}
+
+header .container-user .photo {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    overflow: hidden;
+    border-radius: 22px;
+    margin-right: 20px;
+}
+
+header .container-user .photo img {
+    width: 100%;
+}
+
+header .user-list {
+    position: absolute;
+    display: none;
+    width: 260px;
+    padding: 15px 0;
+    top: 60px;
+    left: -10px;
+    background-color: #21202B;
+    z-index: 5;
+}
+
+header .user-list li {
+    position: relative;
+    height: 48px;
+    padding: 0 30px;
+    margin-bottom: 2px;
+}
+
+header .user-list li:hover {
+    background-color: #2C2B36;
+}
+
+header .user-list li.selected:before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 6px;
+    height: 52px;
+    top: 50%;
+    left: 0;
+    margin-top: -26px;
+    background-color: #CBB852;
+}
+
+header .user-list li .user {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px dashed #443953;
+}
+
+header .user-list li .user .photo {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+}
+
+header .user-list li .user .name {
+    font-size: 12px;
+}

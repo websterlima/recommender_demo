@@ -1,0 +1,46 @@
+main .film-info {
+    width: 100%;
+    font-size: 0;
+}
+
+main .poster {
+    opacity: 0.5;
+}
+
+main .poster, main .gradient {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 50%;
+    z-index: 1;
+}
+
+main .film-info {
+    z-index: 2;
+}
+
+main .film-info .description {
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+    width: 50%;
+    float: right;
+    font-size: 16px;
+    padding-left: 60px;
+    box-sizing: border-box;
+}
+
+main .film-info .description .title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+main .film-info .recommendations {
+    clear: both;
+    width: 100%;
+    height: 300px;
+    background-color: #1E1827;
+    font-size: 16px;
+    z-index: 5;
+}
