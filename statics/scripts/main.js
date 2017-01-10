@@ -1,8 +1,8 @@
 (function($) {
     'use strict';
 
-    var filmsListTemplate = doT.template(getTemplate('statics/templates/films-list.html'));
-    var filmInfoTemplate = doT.template(getTemplate('statics/templates/film-info.html'));
+    var moviesListTemplate = doT.template(getTemplate('statics/templates/movies-list.html'));
+    var movieInfoTemplate = doT.template(getTemplate('statics/templates/movie-info.html'));
     var headerUserTemplate = doT.template(getTemplate('statics/templates/header-user.html'));
     var usersListTemplate = doT.template(getTemplate('statics/templates/users-list.html'));
 
@@ -20,10 +20,10 @@
                     var list = [];
 
                     response.data.forEach(function(id) {
-                        var film = films[id];
-                        film.id = id;
+                        var movie = movies[id];
+                        movie.id = id;
 
-                        list.push(film);
+                        list.push(movie);
                     });
 
 
@@ -33,15 +33,16 @@
 
                     list = list.slice(0, 10);
 
-                    $('main').html(filmsListTemplate({'films': list}));
+                    $('main').html(moviesListTemplate({'movies': list}));
 
                     $('main .recommendations .recommendations-list li').click(function() {
                         $('main .recommendations *').hide();
 
-                        var film = films[$(this).data('id')];
-                        $('main .recommendations').append(filmInfoTemplate({'film': film}));
+                        var movie = movies[$(this).data('id')];
+
+                        $('main .recommendations').append(movieInfoTemplate({'movie': movie}));
                         
-                        $('main .recommendations .film-info .close').click(function() {
+                        $('main .recommendations .movie-info .close').click(function() {
                             $('main .recommendations *:visible').remove();
                             $('main .recommendations *').show();
                         });

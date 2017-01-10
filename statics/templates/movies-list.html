@@ -1,9 +1,9 @@
 <div class="recommendations">
     <div class="recommendations-header">Recomendados para voc&ecirc;</div>
     <ul class="recommendations-list">
-       {{~ it.films:film}}
-            <li data-id="{{=film.id}}">
-                <a href="#"><img src="{{=film.url_poster}}" alt=""></a>
+       {{~ it.movies:movie}}
+            <li data-id="{{=movie.id}}">
+                <a href="#"><img src="{{=movie.url_poster}}" alt=""></a>
             </li>
        {{~}}
     </ul>
