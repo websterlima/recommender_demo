@@ -16,7 +16,7 @@ html, body {
 
 main {
     display: block;
-    max-width: 950px;
+    width: 950px;
     height: calc(100% - 90px);
     margin: 30px auto 0;
 }
