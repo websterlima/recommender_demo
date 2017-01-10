@@ -6,6 +6,45 @@
     var headerUserTemplate = doT.template(getTemplate('statics/templates/header-user.html'));
     var usersListTemplate = doT.template(getTemplate('statics/templates/users-list.html'));
 
+    function loadMovieRecommendations(movieId) {
+        $.ajax({
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer MX3CV9fvZHGKtaT9rGC+tZty10iYAuzb5IPtLVdC1DYh2x2rSVBX0KT3nqwKxxeTOc7e43qK65RbvCOyu4amLgAvj+CnCkbevSlHjfShwaZnzMckX+vPsa2BskRwE9QfqngtqURdk2jiWEPe4dZqIojNkX+Y0SL33569W0nIx0g=.eyJ0aWQiOiAxfQ=='
+            },
+            url: 'https://recomendador-154618.appspot.com/api/services/recommendations?idx=' + movieId + '&kind=item',
+            success: function(response) {
+                var movie = movies[movieId];
+                var response = JSON.parse(response);
+
+                if (response.status === 200) {
+                    var recommendations = [];
+
+                    response.data.forEach(function(id) {
+                        var movie = movies[id];
+                        movie.id = id;
+
+                        recommendations.push(movie);
+                    });
+
+                    recommendations = recommendations.filter(function(e) {
+                        return e.url_poster;
+                    });
+
+                    recommendations = recommendations.slice(0, 5);
+
+                    $('main .recommendations').hide();
+                    $('main').append(movieInfoTemplate({'movie': movie, 'movies': recommendations}));
+
+                    $('main .movie .movie-info .close').click(function() {
+                        $('main .movie').remove();
+                        $('main .recommendations').show();
+                    });
+                }
+            }
+        });
+    }
+
     function loadUserRecommendations(userId) {
         $.ajax({
             method: 'GET',
@@ -14,38 +53,28 @@
             },
             url: 'https://recomendador-154618.appspot.com/api/services/recommendations?idx=' + userId + '&kind=user',
             success: function(response) {
-                response = JSON.parse(response);
+                var response = JSON.parse(response);
 
                 if (response.status === 200) {
-                    var list = [];
+                    var recommendations = [];
 
                     response.data.forEach(function(id) {
                         var movie = movies[id];
                         movie.id = id;
 
-                        list.push(movie);
+                        recommendations.push(movie);
                     });
 
-
-                    list = list.filter(function(e) {
+                    recommendations = recommendations.filter(function(e) {
                         return e.url_poster;
                     });
 
-                    list = list.slice(0, 10);
+                    recommendations = recommendations.slice(0, 10);
 
-                    $('main').html(moviesListTemplate({'movies': list}));
+                    $('main').html(moviesListTemplate({'movies': recommendations}));
 
                     $('main .recommendations .recommendations-list li').click(function() {
-                        $('main .recommendations *').hide();
-
-                        var movie = movies[$(this).data('id')];
-
-                        $('main .recommendations').append(movieInfoTemplate({'movie': movie}));
-                        
-                        $('main .recommendations .movie-info .close').click(function() {
-                            $('main .recommendations *:visible').remove();
-                            $('main .recommendations *').show();
-                        });
+                        loadMovieRecommendations($(this).data('id'));
                     });
                 }
             }
@@ -66,6 +95,8 @@
         });
 
         $('header .user-area .user-list li').click(function() {
+            $('header .user-area .user-list').toggle();
+
             $('.selected').removeClass('selected');
             $(this).addClass('selected');
 
@@ -77,6 +108,7 @@
 
             $('header .user-area .container-user').data('id', user.id);
             $('header .user-area .container-user').html(headerUserTemplate({'user': user}));
+
             loadUserRecommendations(userId);
         });
 

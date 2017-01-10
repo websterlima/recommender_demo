@@ -1,14 +1,23 @@
-<div class="poster-background">
-    <img class="poster" src="{{=it.movie.url_poster}}" alt="">
-    <img class="gradient" src="statics/images/gradiente.png" alt="">
-</div>
-<div class="movie-info">
-    <div class="close">&#10060;</div>
-    <div class="description">
-        <div class="title">{{=it.movie.titulo}}</div>
-        <div class="synopsis">{{=it.movie.sinopse}}</div>
+<div class="movie">
+    <div class="close">&#171;</div>
+    <div class="poster-background">
+        <img class="poster" src="{{=it.movie.url_poster}}" alt="">
+        <!-- <img class="gradient" src="statics/images/gradiente.png" alt=""> -->
     </div>
-    <!-- <div class="recommendations">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis earum et velit repudiandae dicta doloribus voluptatum magnam esse iste hic, incidunt, omnis quos molestias, recusandae eos ipsam quas excepturi expedita.
-    </div> -->
+    <div class="movie-info">
+        <div class="description">
+            <div class="title">{{=it.movie.titulo}}</div>
+            <div class="synopsis">{{=it.movie.sinopse}}</div>
+        </div>
+        <div class="movie-recommendations">
+            <div class="movie-recommendations-header">Assista tamb&eacute;m</div>
+            <ul class="movie-list">
+                {{~it.movies:movie}}
+                    <li data-id="{{=movie.id}}">
+                        <a href="#"><img src="{{=movie.url_poster}}" alt=""></a>
+                    </li>
+                {{~}}
+            </ul>
+        </div>
+    </div>
 </div>
