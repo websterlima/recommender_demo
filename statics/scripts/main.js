@@ -20,7 +20,10 @@
                     var list = [];
 
                     response.data.forEach(function(id) {
-                        list.push(films["" + id]);
+                        var film = films[id];
+                        film.id = id;
+
+                        list.push(film);
                     });
 
 
@@ -31,6 +34,18 @@
                     list = list.slice(0, 10);
 
                     $('main').html(filmsListTemplate({'films': list}));
+
+                    $('main .recommendations .recommendations-list li').click(function() {
+                        $('main .recommendations *').hide();
+
+                        var film = films[$(this).data('id')];
+                        $('main .recommendations').append(filmInfoTemplate({'film': film}));
+                        
+                        $('main .recommendations .film-info .close').click(function() {
+                            $('main .recommendations *:visible').remove();
+                            $('main .recommendations *').show();
+                        });
+                    });
                 }
             }
         });
@@ -38,9 +53,9 @@
 
     $(document).ready(function() {
         var actualUser = users[0];
-
         actualUser.selected = true;
 
+        $('header .user-area .container-user').data('id', actualUser.id);
         $('header .user-area .container-user').html(headerUserTemplate({'user': actualUser}));
 
         $('header .user-area').append(usersListTemplate({'users': users}));
@@ -59,17 +74,12 @@
                 return u.id == userId;
             })[0];
 
+            $('header .user-area .container-user').data('id', user.id);
             $('header .user-area .container-user').html(headerUserTemplate({'user': user}));
             loadUserRecommendations(userId);
         });
 
         loadUserRecommendations(actualUser.id);
-
-        // $('main').html(filmInfoTemplate({'film': films['1']}));
-
-        $('main .recommendations-list li a').click(function() {
-            $('.recommendations').html(filmInfoTemplate({}));
-        });
     });
     
 })(jQuery);

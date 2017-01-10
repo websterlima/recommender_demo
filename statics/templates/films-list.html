@@ -2,7 +2,7 @@
     <div class="recommendations-header">Recomendados para voc&ecirc;</div>
     <ul class="recommendations-list">
        {{~ it.films:film}}
-            <li>
+            <li data-id="{{=film.id}}">
                 <a href="#"><img src="{{=film.url_poster}}" alt=""></a>
             </li>
        {{~}}

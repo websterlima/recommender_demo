@@ -3,20 +3,37 @@ main .film-info {
     font-size: 0;
 }
 
+main .poster-background {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 50%;
+    height: calc(100% - 60px);
+    overflow: hidden;
+}
+
 main .poster {
     opacity: 0.5;
 }
 
 main .poster, main .gradient {
     position: absolute;
-    top: 60px;
+    top: 0;
     left: 0;
-    width: 50%;
+    width: 100%;
     z-index: 1;
 }
 
 main .film-info {
     z-index: 2;
+}
+
+main .film-info .close {
+    position: absolute;
+    top: 90px;
+    right: 50px;
+    font-size: 30px;
+    cursor: pointer;
 }
 
 main .film-info .description {
@@ -26,6 +43,7 @@ main .film-info .description {
     width: 50%;
     float: right;
     font-size: 16px;
+    margin-top: 50px;
     padding-left: 60px;
     box-sizing: border-box;
 }
