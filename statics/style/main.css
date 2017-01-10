@@ -12,12 +12,11 @@ html, body {
     background-color: #161521;
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
 
 main {
     display: block;
-    width: 950px;
+    max-width: 950px;
     height: calc(100% - 60px);
     margin: 30px auto 0;
 }
