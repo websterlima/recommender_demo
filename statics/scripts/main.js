@@ -34,11 +34,17 @@
                     recommendations = recommendations.slice(0, 5);
 
                     $('main .recommendations').hide();
+
+                    $('main .movie').remove();
                     $('main').append(movieInfoTemplate({'movie': movie, 'movies': recommendations}));
 
-                    $('main .movie .movie-info .close').click(function() {
+                    $('main .movie .close').click(function() {
                         $('main .movie').remove();
                         $('main .recommendations').show();
+                    });
+
+                    $('main .movie-info .movie-recommendations li').click(function() {
+                        loadMovieRecommendations($(this).data('id'));
                     });
                 }
             }
