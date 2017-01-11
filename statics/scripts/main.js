@@ -15,6 +15,10 @@
             url: 'https://recomendador-154618.appspot.com/api/services/recommendations?idx=' + movieId + '&kind=item',
             success: function(response) {
                 var movie = movies[movieId];
+
+                movie.ano = movie.titulo.match(/\([\d]*\)/)[0].match(/\d+/)[0];
+                movie.titulo = movie.titulo.split(/ \([\d]*\)/)[0];
+
                 var response = JSON.parse(response);
 
                 if (response.status === 200) {
