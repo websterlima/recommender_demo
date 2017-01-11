@@ -1,5 +1,9 @@
+main .recommendations {
+    margin-top: -40px;
+}
+
 main .recommendations .recommendations-header {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 main .recommendations .recommendations-header:after {
@@ -12,6 +16,7 @@ main .recommendations .recommendations-header:after {
 
 main .recommendations .recommendations-list {
     font-size: 0;
+    margin: 0 -2px;
 }
 
 main .recommendations .recommendations-list li {
@@ -22,7 +27,7 @@ main .recommendations .recommendations-list li {
     position: relative;
     width: 150px;
     height: 225px;
-    margin: 0 0 50px;
+    margin: 2px;
     z-index: 1;
 }
 

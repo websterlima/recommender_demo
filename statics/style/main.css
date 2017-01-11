@@ -15,10 +15,12 @@ html, body {
 }
 
 main {
-    display: block;
-    width: 900px;
+    display: flex;
+    align-items: center;
+
+    width: 920px;
     height: calc(100% - 90px);
-    margin: 30px auto 0;
+    margin: 0 auto;
 }
 
 /* UTILS */
@@ -54,5 +56,3 @@ main {
 ::-webkit-scrollbar-thumb:window-inactive {
     background: rgba(87,72,101,0.4);
 }
-
-574865
