@@ -75,7 +75,7 @@
                         return e.url_poster;
                     });
 
-                    recommendations = recommendations.slice(0, 10);
+                    recommendations = recommendations.slice(0, 12);
 
                     $('main').html(moviesListTemplate({'movies': recommendations}));
 

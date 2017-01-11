@@ -1,6 +1,6 @@
 var users = [
     {
-        'id': 101,
+        'id': 235,
         'name': 'Compadre Washington',
         'photo_url': 'statics/images/compadre.jpg'
     },
@@ -10,7 +10,7 @@ var users = [
         'photo_url': 'statics/images/carla.png'
     },
     {
-        'id': 227,
+        'id': 107,
         'name': 'Beto Jamaica',
         'photo_url': 'statics/images/beto.jpg'
     }
