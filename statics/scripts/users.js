@@ -6,17 +6,17 @@
 var users = [
     {
         'id': 84,
-        'name': 'Compadre Washington',
-        'photo_url': 'statics/images/compadre.jpg'
+        'name': 'Executivo, 32 anos',
+        'photo_url': 'statics/images/executivo.png'
     },
     {
         'id': 165,
-        'name': 'Carla Perez',
-        'photo_url': 'statics/images/carla.png'
+        'name': 'Universit&aacute;ria, 20 anos',
+        'photo_url': 'statics/images/mulher.jpg'
     },
     {
         'id': 179,
-        'name': 'Beto Jamaica',
-        'photo_url': 'statics/images/beto.jpg'
+        'name': 'Estudante, 15 anos',
+        'photo_url': 'statics/images/muleque.jpg'
     }
 ];
