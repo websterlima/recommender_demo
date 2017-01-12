@@ -16,7 +16,9 @@
             success: function(response) {
                 var movie = movies[movieId];
 
-                movie.ano = movie.titulo.match(/\([\d]*\)/)[0].match(/\d+/)[0];
+                var ano = movie.titulo.match(/\([\d]*\)/);
+
+                movie.ano = ano ? ano[0].match(/\d+/)[0] : '';
                 movie.titulo = movie.titulo.split(/ \([\d]*\)/)[0];
 
                 var response = JSON.parse(response);
@@ -79,7 +81,7 @@
                         return e.url_poster;
                     });
 
-                    recommendations = recommendations.slice(0, 12);
+                    recommendations = recommendations.slice(0, 8);
 
                     $('main').html(moviesListTemplate({'movies': recommendations}));
 
@@ -123,6 +125,7 @@
         });
 
         loadUserRecommendations(actualUser.id);
+        // loadMovieRecommendations(95);
     });
     
 })(jQuery);

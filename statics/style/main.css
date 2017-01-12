@@ -17,9 +17,10 @@ html, body {
 main {
     display: flex;
     align-items: center;
-
-    width: 920px;
-    height: calc(100% - 90px);
+    justify-content: center;
+    width: 740px;
+    height: calc(100% - 60px);
+    min-height: 550px;
     margin: 0 auto;
 }
 

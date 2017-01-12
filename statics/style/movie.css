@@ -6,23 +6,22 @@ main .movie {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: -40px;
 }
 
 main .movie .poster-background {
-    width: 350px;
+    width: 300px;
 }
 
 main .movie .poster-background .poster {
     display: block;
-    width: 350px;
-    height: 525px;
+    width: 300px;
+    height: 450px;
     z-index: 1;
 }
 
 main .movie .movie-info {
     position: relative;
-    width: 500px;
+    width: 400px;
     text-align: right;
     font-size: 0;
     z-index: 2;
@@ -31,16 +30,16 @@ main .movie .movie-info {
 main .movie .movie-info .description {
     display: inline-block;
     vertical-align: top;
-    width: 500px;
-    height: 247px;
+    width: 400px;
+    height: 213px;
     float: right;
     text-align: left;
-    font-size: 16px;
+    font-size: 14px;
     box-sizing: border-box;
 }
 
 main .movie .movie-info .description .title {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
@@ -51,7 +50,7 @@ main .movie .movie-info .description .year {
 }
 
 main .movie .movie-info .description .synopsis {
-    height: 180px;
+    height: 128px;
     opacity: 0.8;
     overflow: hidden;
 }
@@ -61,7 +60,7 @@ main .movie .movie-info .movie-recommendations {
 
     clear: both;
     float: right;
-    width: 500px;
+    width: 400px;
     margin-top: 30px;
     font-size: 0;
 }
@@ -85,8 +84,8 @@ main .movie .movie-info .movie-recommendations li {
     justify-content: center;
 
     position: relative;
-    width: 100px;
-    height: 150px;
+    width: 80px;
+    height: 120px;
     z-index: 1;
 }
 
@@ -97,13 +96,13 @@ main .movie .movie-info .movie-recommendations li:hover {
 main .movie .movie-info .movie-recommendations li a {
     position: absolute;
 
-    width: 100px;
-    height: 150px;
+    width: 80px;
+    height: 120px;
 
     top: 50%;
     left: 50%;
-    margin-top: -75px;
-    margin-left: -50px;
+    margin-top: -60px;
+    margin-left: -40px;
 
     background-color: #000;
 
@@ -112,11 +111,11 @@ main .movie .movie-info .movie-recommendations li a {
 }
 
 main .movie .movie-info .movie-recommendations li:hover a {
-    width: 120px;
-    height: 180px;
+    width: 90px;
+    height: 135px;
 
-    margin-top: -90px;
-    margin-left: -60px;
+    margin-top: -67.5px;
+    margin-left: -45px;
 }
 
 main .movie .movie-info .movie-recommendations li a img {
@@ -125,7 +124,7 @@ main .movie .movie-info .movie-recommendations li a img {
 }
 
 main .close {
-    font-size: 50px;
+    font-size: 40px;
     cursor: pointer;
     text-align: right;
 }
