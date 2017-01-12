@@ -37,7 +37,7 @@
                         return e.url_poster;
                     });
 
-                    recommendations = recommendations.slice(0, 5);
+                    recommendations = recommendations.slice(1, 6);
 
                     $('main .recommendations').hide();
 
