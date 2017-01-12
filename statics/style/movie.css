@@ -16,19 +16,19 @@ main .movie .background-image, main .movie .gradient {
     position: fixed;
     top: 50%;
     right: 0;
-    margin-top: -450px;
-    width: 600px;
+    margin-top: -600px;
+    width: 800px;
 }
 
 main .movie .poster-background {
-    width: 300px;
+    width: 350px;
     z-index: 1;
 }
 
 main .movie .poster-background .poster {
     display: block;
-    width: 300px;
-    height: 450px;
+    width: 350px;
+    height: 525px;
 }
 
 main .movie .movie-info {
@@ -42,8 +42,8 @@ main .movie .movie-info {
 main .movie .movie-info .description {
     display: inline-block;
     vertical-align: top;
-    width: 400px;
-    height: 213px;
+    width: 500px;
+    height: 258px;
     float: right;
     text-align: left;
     font-size: 14px;
@@ -72,7 +72,7 @@ main .movie .movie-info .movie-recommendations {
 
     clear: both;
     float: right;
-    width: 400px;
+    width: 500px;
     margin-top: 30px;
     font-size: 0;
 }
@@ -96,8 +96,8 @@ main .movie .movie-info .movie-recommendations li {
     justify-content: center;
 
     position: relative;
-    width: 80px;
-    height: 120px;
+    width: 100px;
+    height: 150px;
     z-index: 1;
 }
 
@@ -108,13 +108,13 @@ main .movie .movie-info .movie-recommendations li:hover {
 main .movie .movie-info .movie-recommendations li a {
     position: absolute;
 
-    width: 80px;
-    height: 120px;
+    width: 100px;
+    height: 150px;
 
     top: 50%;
     left: 50%;
-    margin-top: -60px;
-    margin-left: -40px;
+    margin-top: -75px;
+    margin-left: -50px;
 
     background-color: #000;
 
@@ -123,11 +123,11 @@ main .movie .movie-info .movie-recommendations li a {
 }
 
 main .movie .movie-info .movie-recommendations li:hover a {
-    width: 90px;
-    height: 135px;
+    width: 110px;
+    height: 165px;
 
-    margin-top: -67.5px;
-    margin-left: -45px;
+    margin-top: -82.5px;
+    margin-left: -55px;
 }
 
 main .movie .movie-info .movie-recommendations li a img {

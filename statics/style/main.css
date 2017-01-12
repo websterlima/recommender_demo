@@ -18,7 +18,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 740px;
+    width: 900px;
     height: calc(100% - 60px);
     min-height: 550px;
     margin: 0 auto;
