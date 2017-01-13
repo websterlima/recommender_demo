@@ -33,7 +33,7 @@ main .movie .poster-background .poster {
 
 main .movie .movie-info {
     position: relative;
-    width: 400px;
+    width: 500px;
     text-align: right;
     font-size: 0;
     z-index: 2;
@@ -137,6 +137,10 @@ main .movie .movie-info .movie-recommendations li a img {
 
 main .close {
     font-size: 40px;
-    cursor: pointer;
     text-align: right;
+}
+
+main .close a {
+    text-decoration: none;
+    cursor: pointer;
 }

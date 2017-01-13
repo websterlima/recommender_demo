@@ -5,6 +5,7 @@
     var movieInfoTemplate = doT.template(getTemplate('statics/templates/movie-info.html'));
     var headerUserTemplate = doT.template(getTemplate('statics/templates/header-user.html'));
     var usersListTemplate = doT.template(getTemplate('statics/templates/users-list.html'));
+    var movieFilteredListTemplate = doT.template(getTemplate('statics/templates/movies-filtered-list.html'));
 
     function loadMovieRecommendations(movieId) {
         $.ajax({
@@ -44,7 +45,7 @@
                     $('main .movie').remove();
                     $('main').append(movieInfoTemplate({'movie': movie, 'movies': recommendations}));
 
-                    $('main .movie .close').click(function() {
+                    $('main .movie .close a').click(function() {
                         $('main .movie').remove();
                         $('main .recommendations').show();
                     });
@@ -126,6 +127,37 @@
 
         loadUserRecommendations(actualUser.id);
         // loadMovieRecommendations(95);
+
+        var moviesList = [];
+
+        for (var idMovie in movies) {
+            var movie = movies[idMovie];
+            movie.id = idMovie;
+            moviesList.push(movie);
+        }
+
+        $('.search-input').on('input', function() {
+            var q = $(this).val();
+
+            if (q.length < 3) {
+                $('header .search-area .search-result').empty();
+                return;
+            }
+
+            var filteredMovies = moviesList.filter(function(movie) {
+                return movie.titulo.toLowerCase().indexOf(q.toLowerCase()) != -1 && movie.url_poster;
+            });
+
+            filteredMovies = filteredMovies.slice(0, 5);
+            $('header .search-area .search-result').html(movieFilteredListTemplate({'movies': filteredMovies}));
+
+            $('header .search-area .search-result ul li').click(function() {
+                console.log($(this).data('id'));
+                loadMovieRecommendations($(this).data('id'));
+                $('header .search-area input').val('');
+                $('header .search-area .search-result').empty();
+            });
+        });
     });
     
 })(jQuery);

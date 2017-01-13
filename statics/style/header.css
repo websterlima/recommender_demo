@@ -18,17 +18,92 @@ header .logo {
     letter-spacing: 2px;
 }
 
+header .search-area {
+    position: absolute;
+    width: 250px;
+    height: 60px;
+    line-height: 60px;
+    text-align: left;
+    top: 50%;
+    right: 450px;
+    margin-top: -30px;
+}
+
+header .search-area input {
+    display: inline-block;
+    width: 90%;
+    height: 20px;
+    line-height: 20px;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px #C3C3C5 solid;
+    color: rgba(195,195,197, 0.5);
+}
+
+header .search-area input::-webkit-input-placeholder {
+    font-style: italic;
+    color: rgba(195,195,197, 0.5);
+}
+
+header .search-area input::-moz-input-placeholder {
+    font-style: italic;
+    color: rgba(195,195,197, 0.5);
+}
+
+header .search-area input:focus {
+    outline: none;
+}
+
+header .search-area .search-icon {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: -15px;
+    font-size: 2em;
+
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+header .search-area .search-result {
+    font-size: 12px;
+    background-color: #21202B;
+}
+
+header .search-area .search-result ul {
+    /*padding: 15px;*/
+    width: 100%;
+    /*box-sizing: content-box;*/
+}
+
+header .search-area .search-result ul li {
+    height: 30px;
+    line-height: 30px;
+    width: calc(100% - 40px);
+    padding: 5px 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+header .search-area .search-result ul li:hover {
+    background-color: #2C2B36;
+}
+
 header .container-user {
     position: absolute;
     display: flex;
     align-items: center;
-    /*justify-content: center;*/
     width: 210px;
-    height: 70px;
+    height: 60px;
     text-align: left;
     top: 50%;
     right: 90px;
-    margin-top: -35px;
+    margin-top: -30px;
     cursor: pointer;
 }
 
